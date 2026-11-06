@@ -112,7 +112,7 @@ team-development-skill/        # 仓库根目录 = skill 内容
 └── LICENSE                    # MIT
 ```
 
-`AGENTS.md` 与 `CODEX_PROGRESS.md` 供 AI 维护代理在新的会话或工具中接续开发和交接进度时快速恢复上下文。
+AI 维护代理接手时，先读 [CODEX_PROGRESS.md](CODEX_PROGRESS.md)，再读 [AGENTS.md](AGENTS.md) 与相关 skill 内容，并按进度文件的只读命令校准当前状态。阶段结束时同步维护记录，供新的会话或设备接续。
 
 ## 维护与边界
 

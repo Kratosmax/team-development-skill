@@ -28,7 +28,8 @@
 - 新建 CHANGELOG（本文件）。
 - 加入 `scripts/validate.py` 可选本地自检脚本（需要 Python 3.10+）。
 - 加入 `AGENTS.md`、`CODEX_PROGRESS.md` 作为 AI 接续入口。
-- MIT 许可证由维护者添加。
+- 添加 MIT 许可证。
+- 完成公开仓库首次推送、远程提交与文件哈希核验，以及 HTTPS 克隆、快进更新和克隆副本校验。
 
 ### 边界说明
 

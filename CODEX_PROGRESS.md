@@ -20,15 +20,13 @@ git diff --check
 
 - 本阶段：将 team-development 整理为可分享的 GitHub 仓库；维护来源就是根目录 skill，无需编译或桌面安装包。
 - 仓库目标：https://github.com/Kratosmax/team-development-skill ，公开，默认 main。
-- 提交基线：仓库初始化阶段，尚无首个提交；以接手时 git log 与 remote 校准。
-- 本地：已加入维护规则、MIT 许可、标准库验证脚本；安装文档和变更记录正在整理。
-- 线上：尚未完成创建、首次推送与独立核验，不能依据此文件声称已同步。
+- 已核验发布基线：485f7245f19f43439cbb8e7d0898447694f5b8ba（首次发布）。这是校准基线，后续进度文档提交会继续推进 HEAD。
+- 本地：9 个交付文件已完成，安装说明、变更记录、MIT 许可、维护与接续规则和校验脚本均已纳入 Git。
+- 线上：2026-11-06 已通过 gh repo view 确认 PUBLIC/main；首次推送后 git ls-remote 与本地发布基线一致，GitHub contents API 的 SKILL.md blob SHA 与本地 git hash-object 一致。公开 HTTPS 克隆与快进更新已成功，克隆中的校验通过。后续接手仍须重新核对实时状态。
 
 ## 当前待办
 
-1. 完成本地文档与必要验证。
-2. 创建目标仓库、提交并推送，核对 GitHub 分支提交。
-3. 回填真实验证与线上核验记录；完成后等待新的用户需求。
+本阶段建仓、首推、安装验证已完成。当前仅需按阶段收尾协议同步本次核验记录，随后等待新的用户需求；没有其他已授权未完成的功能任务。
 
 ## 关键入口
 
@@ -46,10 +44,14 @@ git diff --check
 
 ## 验证记录
 
-- 2026-11-06：当前阶段验证待执行，不沿用建仓前的历史检查作为本轮通过。
+- 2026-11-06：python scripts/validate.py 通过（元数据、UTF-8、必需文件、设备路径与本地引用）。
+- 2026-11-06：在隔离临时副本中验证 BOM、缺失链接、越界链接和错误 skill 名称均被拒绝，真实安装文件未被测试修改。
+- 2026-11-06：独立只读审查维护授权边界、并行及隔离规则，结论可交付。
+- 2026-11-06：公开仓库 HTTPS git clone、git pull --ff-only 和克隆副本校验通过；本地 git diff --check、首提交 git diff --cached --check 均通过。
+- 未配置 CI；PowerShell/Windows 环境验证了 Git 安装与更新流程，Linux/macOS 原生环境未运行。
 - 最低命令：python scripts/validate.py；git diff --check；提交前 git diff --cached --check。
 - 本项目是 Markdown skill，不提供也不需要应用构建、Full/Lite 包、后台服务或安装器；无需执行桌面应用发行流程。
 
 ## 收尾维护
 
-每个阶段更新本文件、必要的 README 与 CHANGELOG，再按 AGENTS.md 提交、推送及独立核验。提交只记某次已核验基线；不要自指“永远是当前 HEAD”。首次发布完成后删除过期初始待办；没有新授权任务时等待用户需求。
+每个阶段更新本文件、必要的 README 与 CHANGELOG，再按 AGENTS.md 提交、推送及独立核验。提交只记某次已核验基线；不要自指“永远是当前 HEAD”。维护记录中的“已完成”仅指上述已核验基线；后续提交与推送结果以实时 Git 证据为准。没有新授权任务时等待用户需求。
